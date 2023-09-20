@@ -33,14 +33,12 @@
     </div>
   </div>
   <!-- hamburger menu item -->
-  <div class="ham fixed hidden w-[100%] min-h-screen bg-slate-700 pt-[120px] z-[1]">
-    <div class="ham list-none h-[15rem] flex flex-col justify-between items-center ">
-      <li><a class=" text-center py-[1rem] px-20  bg-slate-800  text-white " href="about.html">About</a></li>
-      <li><a class=" text-center py-[1rem] px-20  bg-slate-800 text-white " href="#">Services</a></li>
-      <li><a class=" text-center py-[1rem] px-20  bg-slate-800 text-white " href="#">Pricing</a></li>
-      <li><a class=" text-center py-[1rem] px-20  bg-slate-800 text-white " href="#">Blog</a></li>
+    <div class="ham fixed left-[100%] w-[100%]  min-h-[100vh] block pt-[50px] list-none z-10 bg-slate-800 duration-500">
+      <li><a class="block w-[100%] my-0 mb-10 mx-auto max-w-[200px] font-bold text-center py-[12px] px-16px text-white bg-slate-700 " href="about.html">About</a></li>
+      <li><a class="block w-[100%] my-0 mb-10 mx-auto max-w-[200px] font-bold text-center py-[12px] px-16px text-white bg-slate-700 " href="#">Services</a></li>
+      <li><a class="block w-[100%] my-0 mb-10 mx-auto max-w-[200px] font-bold text-center py-[12px] px-16px text-white bg-slate-700 " href="#">Pricing</a></li>
+      <li><a class="block w-[100%] my-0 mb-10 mx-auto max-w-[200px] font-bold text-center py-[12px] px-16px text-white bg-slate-700 " href="#">Blog</a></li>
     </div>
-  </div>
   <!-- hero section -->
   <div class="hero flex items-center md:flex-row flex-col justify-around md:m-28 my-20 mx-10 md:h-[350px] h-[800px]">
     <img class="absolute opacity-[20%] top-[12rem] md:left-[29rem] right-[20px] md:top-50 " src="src/img/stars.png" alt="">
@@ -67,15 +65,18 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-    const hamburger = document.getElementById("hamburger")
-    const item = document.querySelector(".ham")
+    const hamburger = document.getElementById("hamburger");
+    const item = document.querySelector(".ham");
+    let isHamburgerActive = false;
+
     hamburger.addEventListener("click", () => {
-    if (item.classList.contains("hidden")){
-      item.classList.remove("hidden")
+    if (isHamburgerActive) {
+    item.style.left = "100%";
     } else {
-      item.classList.add("hidden")
+    item.style.left = "0%";
     }
-  })
+    isHamburgerActive = !isHamburgerActive;
+});
   </script>
 </body>
 </html>
